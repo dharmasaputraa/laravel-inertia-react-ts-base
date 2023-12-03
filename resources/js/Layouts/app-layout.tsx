@@ -1,6 +1,6 @@
 import { Head } from "@inertiajs/react";
 import { PropsWithChildren } from "react";
-import Navbar from "@/Layouts/navbar";
+import Navbar from "@/layouts/navbar";
 
 export default function AppLayout({
     children,

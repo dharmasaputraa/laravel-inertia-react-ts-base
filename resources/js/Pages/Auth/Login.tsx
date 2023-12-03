@@ -1,11 +1,11 @@
 import { useEffect, FormEventHandler } from "react";
-import GuestLayout from "@/Layouts/guest-layout";
-import InputError from "@/Components/InputError";
+import GuestLayout from "@/layouts/guest-layout";
+import InputError from "@/components/input-error";
 import { Link, useForm } from "@inertiajs/react";
-import { Label } from "@/Components/ui/label";
-import { Input } from "@/Components/ui/input";
-import { Checkbox } from "@/Components/ui/checkbox";
-import { Button } from "@/Components/ui/button";
+import { Label } from "@/components/ui/label";
+import { Input } from "@/components/ui/input";
+import { Checkbox } from "@/components/ui/checkbox";
+import { Button } from "@/components/ui/button";
 
 export default function Login({
     status,

@@ -1,5 +1,5 @@
-import ApplicationLogo from "@/Components/ApplicationLogo";
-import NavLink from "@/Components/nav-link";
+import ApplicationLogo from "@/components/application-logo";
+import NavLink from "@/components/nav-link";
 import { PageProps } from "@/types";
 import { router, usePage } from "@inertiajs/react";
 import {
@@ -9,7 +9,7 @@ import {
     DropdownMenuLabel,
     DropdownMenuSeparator,
     DropdownMenuTrigger,
-} from "@/Components/ui/dropdown-menu";
+} from "@/components/ui/dropdown-menu";
 import { IconChevronDown } from "@tabler/icons-react";
 
 export default function Navbar() {

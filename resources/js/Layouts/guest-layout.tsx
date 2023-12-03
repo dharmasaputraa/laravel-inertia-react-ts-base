@@ -1,5 +1,5 @@
-import ApplicationLogo from "@/Components/ApplicationLogo";
-import { Card, CardContent, CardHeader, CardTitle } from "@/Components/ui/card";
+import ApplicationLogo from "@/components/application-logo";
+import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
 import { Head, Link } from "@inertiajs/react";
 import { PropsWithChildren } from "react";
 

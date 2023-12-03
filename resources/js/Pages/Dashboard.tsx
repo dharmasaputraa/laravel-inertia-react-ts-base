@@ -1,7 +1,6 @@
-import AppLayout from "@/Layouts/app-layout";
-import { Head } from "@inertiajs/react";
+import AppLayout from "@/layouts/app-layout";
 import { PageProps } from "@/types";
-import Container from "@/Components/container";
+import Container from "@/components/container";
 
 export default function Dashboard({ auth }: PageProps) {
     return (
