@@ -1,6 +1,8 @@
-import { Head } from "@inertiajs/react";
-import { PropsWithChildren } from "react";
-import Navbar from "@/layouts/navbar";
+import { Head } from '@inertiajs/react';
+import { PropsWithChildren, useState } from 'react';
+import Navbar from '@/layouts/navbar';
+import { ThemeProvider } from '@/components/theme-provider';
+import ResponsiveNavbar from '@/layouts/responsive-navbar';
 
 export default function AppLayout({
     children,
@@ -8,13 +10,16 @@ export default function AppLayout({
 }: PropsWithChildren<{
     title: string;
 }>) {
+    const [open, setOpen] = useState(false);
+
     return (
         <>
             <Head title={title}></Head>
-            <div>
-                <Navbar />
+            <ThemeProvider>
+                <ResponsiveNavbar openCommandPalette={open} setOpenCommandPalette={setOpen} />
+                <Navbar openCommandPalette={open} setOpenCommandPalette={setOpen} />
                 {children}
-            </div>
+            </ThemeProvider>
         </>
     );
 }

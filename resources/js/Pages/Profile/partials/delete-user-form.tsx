@@ -1,10 +1,10 @@
-import { useRef, useState, FormEventHandler } from "react";
-import InputError from "@/components/input-error";
-import { useForm } from "@inertiajs/react";
-import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/components/ui/card";
-import { Button } from "@/components/ui/button";
-import { Label } from "@/components/ui/label";
-import { Input } from "@/components/ui/input";
+import { useRef, useState, FormEventHandler } from 'react';
+import InputError from '@/components/input-error';
+import { useForm } from '@inertiajs/react';
+import { Card, CardContent, CardDescription, CardHeader, CardTitle } from '@/components/ui/card';
+import { Button } from '@/components/ui/button';
+import { Label } from '@/components/ui/label';
+import { Input } from '@/components/ui/input';
 import {
     Dialog,
     DialogClose,
@@ -14,7 +14,7 @@ import {
     DialogHeader,
     DialogTitle,
     DialogTrigger,
-} from "@/components/ui/dialog";
+} from '@/components/ui/dialog';
 
 export default function DeleteUserForm() {
     const [confirmingUserDeletion, setConfirmingUserDeletion] = useState(false);
@@ -28,7 +28,7 @@ export default function DeleteUserForm() {
         reset,
         errors,
     } = useForm({
-        password: "",
+        password: '',
     });
 
     const confirmUserDeletion = () => {
@@ -38,7 +38,7 @@ export default function DeleteUserForm() {
     const deleteUser: FormEventHandler = (e) => {
         e.preventDefault();
 
-        destroy(route("profile.destroy"), {
+        destroy(route('profile.destroy'), {
             preserveScroll: true,
             onSuccess: () => closeModal(),
             onError: () => passwordInput.current?.focus(),
@@ -91,7 +91,7 @@ export default function DeleteUserForm() {
                                 type="password"
                                 name="password"
                                 value={data.password}
-                                onChange={(e) => setData("password", e.target.value)}
+                                onChange={(e) => setData('password', e.target.value)}
                                 autoFocus
                                 placeholder="Password"
                             />

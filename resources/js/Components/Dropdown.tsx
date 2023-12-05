@@ -6,9 +6,9 @@ import {
     PropsWithChildren,
     Dispatch,
     SetStateAction,
-} from "react";
-import { Link, InertiaLinkProps } from "@inertiajs/react";
-import { Transition } from "@headlessui/react";
+} from 'react';
+import { Link, InertiaLinkProps } from '@inertiajs/react';
+import { Transition } from '@headlessui/react';
 
 const DropDownContext = createContext<{
     open: boolean;
@@ -47,25 +47,25 @@ const Trigger = ({ children }: PropsWithChildren) => {
 };
 
 const Content = ({
-    align = "right",
-    width = "48",
-    contentClasses = "py-1 bg-white",
+    align = 'right',
+    width = '48',
+    contentClasses = 'py-1 bg-white',
     children,
-}: PropsWithChildren<{ align?: "left" | "right"; width?: "48"; contentClasses?: string }>) => {
+}: PropsWithChildren<{ align?: 'left' | 'right'; width?: '48'; contentClasses?: string }>) => {
     const { open, setOpen } = useContext(DropDownContext);
 
-    let alignmentClasses = "origin-top";
+    let alignmentClasses = 'origin-top';
 
-    if (align === "left") {
-        alignmentClasses = "ltr:origin-top-left rtl:origin-top-right start-0";
-    } else if (align === "right") {
-        alignmentClasses = "ltr:origin-top-right rtl:origin-top-left end-0";
+    if (align === 'left') {
+        alignmentClasses = 'ltr:origin-top-left rtl:origin-top-right start-0';
+    } else if (align === 'right') {
+        alignmentClasses = 'ltr:origin-top-right rtl:origin-top-left end-0';
     }
 
-    let widthClasses = "";
+    let widthClasses = '';
 
-    if (width === "48") {
-        widthClasses = "w-48";
+    if (width === '48') {
+        widthClasses = 'w-48';
     }
 
     return (
@@ -95,12 +95,12 @@ const Content = ({
     );
 };
 
-const DropdownLink = ({ className = "", children, ...props }: InertiaLinkProps) => {
+const DropdownLink = ({ className = '', children, ...props }: InertiaLinkProps) => {
     return (
         <Link
             {...props}
             className={
-                "block w-full px-4 py-2 text-start text-sm leading-5 text-gray-700 transition duration-150 ease-in-out hover:bg-gray-100 focus:bg-gray-100 focus:outline-none " +
+                'block w-full px-4 py-2 text-start text-sm leading-5 text-gray-700 transition duration-150 ease-in-out hover:bg-gray-100 focus:bg-gray-100 focus:outline-none ' +
                 className
             }
         >

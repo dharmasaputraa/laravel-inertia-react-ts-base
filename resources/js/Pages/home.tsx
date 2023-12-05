@@ -1,5 +1,5 @@
-import Container from "@/components/container";
-import AppLayout from "@/layouts/app-layout";
+import Container from '@/components/container';
+import AppLayout from '@/layouts/app-layout';
 
 export default function Home() {
     return (

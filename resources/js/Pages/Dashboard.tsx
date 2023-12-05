@@ -1,15 +1,20 @@
-import AppLayout from "@/layouts/app-layout";
-import { PageProps } from "@/types";
-import Container from "@/components/container";
+import AppLayout from '@/layouts/app-layout';
+import { PageProps } from '@/types';
+import Container from '@/components/container';
+import UserLayout from '@/layouts/user-layout';
+import { Card, CardDescription, CardHeader, CardTitle } from '@/components/ui/card';
 
 export default function Dashboard({ auth }: PageProps) {
     return (
         <>
-            <Container>
-                <div className="py-12">You are logged in!</div>
-            </Container>
+            <Card>
+                <CardHeader>
+                    <CardTitle>Dashboard</CardTitle>
+                    <CardDescription>Welcome to your dashboard</CardDescription>
+                </CardHeader>
+            </Card>
         </>
     );
 }
 
-Dashboard.layout = (page: React.ReactNode) => <AppLayout title="Dashboard" children={page} />;
+Dashboard.layout = (page: React.ReactNode) => <UserLayout title="Dashboard" children={page} />;

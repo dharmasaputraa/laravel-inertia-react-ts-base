@@ -1,10 +1,10 @@
-import DeleteUserForm from "./partials/delete-user-form";
-import UpdatePasswordForm from "./partials/update-password-form";
-import UpdateProfileInformationForm from "./partials/update-profile-information-form";
-import { Head } from "@inertiajs/react";
-import { PageProps } from "@/types";
-import AppLayout from "@/layouts/app-layout";
-import Container from "@/components/container";
+import DeleteUserForm from './partials/delete-user-form';
+import UpdatePasswordForm from './partials/update-password-form';
+import UpdateProfileInformationForm from './partials/update-profile-information-form';
+import { Head } from '@inertiajs/react';
+import { PageProps } from '@/types';
+import Container from '@/components/container';
+import UserLayout from '@/layouts/user-layout';
 
 export default function Edit({
     auth,
@@ -14,23 +14,15 @@ export default function Edit({
     return (
         <>
             <Head title="Profile" />
+            <div className="max-w-2xl space-y-6">
+                <UpdateProfileInformationForm mustVerifyEmail={mustVerifyEmail} status={status} />
 
-            <div className="py-12">
-                <Container>
-                    <div className="max-w-2xl space-y-6">
-                        <UpdateProfileInformationForm
-                            mustVerifyEmail={mustVerifyEmail}
-                            status={status}
-                        />
+                <UpdatePasswordForm />
 
-                        <UpdatePasswordForm />
-
-                        <DeleteUserForm />
-                    </div>
-                </Container>
+                <DeleteUserForm />
             </div>
         </>
     );
 }
 
-Edit.layout = (page: React.ReactNode) => <AppLayout title="Profile" children={page} />;
+Edit.layout = (page: React.ReactNode) => <UserLayout title="Profile" children={page} />;

@@ -1,11 +1,11 @@
-import { useEffect, FormEventHandler } from "react";
-import GuestLayout from "@/layouts/guest-layout";
-import InputError from "@/components/input-error";
-import { Link, useForm } from "@inertiajs/react";
-import { Label } from "@/components/ui/label";
-import { Input } from "@/components/ui/input";
-import { Checkbox } from "@/components/ui/checkbox";
-import { Button } from "@/components/ui/button";
+import { useEffect, FormEventHandler } from 'react';
+import GuestLayout from '@/layouts/guest-layout';
+import InputError from '@/components/input-error';
+import { Link, useForm } from '@inertiajs/react';
+import { Label } from '@/components/ui/label';
+import { Input } from '@/components/ui/input';
+import { Checkbox } from '@/components/ui/checkbox';
+import { Button } from '@/components/ui/button';
 
 export default function Login({
     status,
@@ -15,21 +15,21 @@ export default function Login({
     canResetPassword: boolean;
 }) {
     const { data, setData, post, processing, errors, reset } = useForm({
-        email: "",
-        password: "",
+        email: '',
+        password: '',
         remember: false,
     });
 
     useEffect(() => {
         return () => {
-            reset("password");
+            reset('password');
         };
     }, []);
 
     const submit: FormEventHandler = (e) => {
         e.preventDefault();
 
-        post(route("login"));
+        post(route('login'));
     };
 
     return (
@@ -48,7 +48,7 @@ export default function Login({
                         className="mt-1 block w-full"
                         autoComplete="username"
                         autoFocus
-                        onChange={(e) => setData("email", e.target.value)}
+                        onChange={(e) => setData('email', e.target.value)}
                     />
 
                     <InputError message={errors.email} className="mt-2" />
@@ -64,7 +64,7 @@ export default function Login({
                         value={data.password}
                         className="mt-1 block w-full"
                         autoComplete="current-password"
-                        onChange={(e) => setData("password", e.target.value)}
+                        onChange={(e) => setData('password', e.target.value)}
                     />
 
                     <InputError message={errors.password} className="mt-2" />
@@ -75,7 +75,7 @@ export default function Login({
                         <Checkbox
                             name="remember"
                             checked={data.remember}
-                            onCheckedChange={(e: any) => setData("remember", e)}
+                            onCheckedChange={(e: any) => setData('remember', e)}
                         />
                         <span className="ms-2 text-sm text-muted-foreground">Remember me</span>
                     </label>
@@ -84,7 +84,7 @@ export default function Login({
                 <div className="mt-4 flex items-center justify-end">
                     {canResetPassword && (
                         <Link
-                            href={route("password.request")}
+                            href={route('password.request')}
                             className="text-muted-foreground hover:text-primary"
                         >
                             Forgot your password?
