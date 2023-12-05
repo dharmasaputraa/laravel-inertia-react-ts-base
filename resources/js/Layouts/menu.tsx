@@ -19,6 +19,13 @@ export default function Menu() {
                 Settings
             </VerticalNavLink>
             <Separator className="my-2" />
+            <VerticalNavLink
+                active={route().current('users.*')}
+                href={route('users.index')}
+                icon="IconUser"
+            >
+                Users
+            </VerticalNavLink>
             <VerticalNavLink href={'#'} icon="IconPhoto">
                 Gallery
             </VerticalNavLink>

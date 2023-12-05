@@ -1,12 +1,5 @@
 import ApplicationLogo from '@/components/application-logo';
-import {
-    Sheet,
-    SheetContent,
-    SheetDescription,
-    SheetHeader,
-    SheetTitle,
-    SheetTrigger,
-} from '@/components/ui/sheet';
+import { Sheet, SheetContent } from '@/components/ui/sheet';
 import { Link } from '@inertiajs/react';
 import Menu from '@/layouts/menu';
 

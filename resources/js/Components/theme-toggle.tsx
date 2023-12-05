@@ -5,11 +5,18 @@ import {
     DropdownMenuItem,
     DropdownMenuTrigger,
 } from '@/components/ui/dropdown-menu';
-import { useTheme } from '@/components/theme-provider';
+import { useTheme, Theme } from '@/components/theme-provider';
 import { IconMoonStars, IconSun } from '@tabler/icons-react';
 
 export function ThemeToggle() {
     const { setTheme } = useTheme();
+
+    const handleThemeChange = (theme: Theme) => {
+        if (typeof localStorage !== 'undefined') {
+            localStorage.setItem('theme', theme);
+        }
+        setTheme(theme);
+    };
 
     return (
         <DropdownMenu>
@@ -21,9 +28,15 @@ export function ThemeToggle() {
                 </Button>
             </DropdownMenuTrigger>
             <DropdownMenuContent align="end">
-                <DropdownMenuItem onClick={() => setTheme('light')}>Light</DropdownMenuItem>
-                <DropdownMenuItem onClick={() => setTheme('dark')}>Dark</DropdownMenuItem>
-                <DropdownMenuItem onClick={() => setTheme('system')}>System</DropdownMenuItem>
+                <DropdownMenuItem onClick={() => handleThemeChange('light' as Theme)}>
+                    Light
+                </DropdownMenuItem>
+                <DropdownMenuItem onClick={() => handleThemeChange('dark' as Theme)}>
+                    Dark
+                </DropdownMenuItem>
+                <DropdownMenuItem onClick={() => handleThemeChange('system' as Theme)}>
+                    System
+                </DropdownMenuItem>
             </DropdownMenuContent>
         </DropdownMenu>
     );

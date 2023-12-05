@@ -16,6 +16,7 @@ import { Button } from '@/components/ui/button';
 import { useState } from 'react';
 import { CommandPalette } from './command-palette';
 import { Badge } from '@/components/ui/badge';
+import { Avatar, AvatarFallback, AvatarImage } from '@/components/ui/avatar';
 
 export default function Navbar({ openCommandPalette, setOpenCommandPalette }: CommandPaletteState) {
     const { auth } = usePage<PageProps>().props;
@@ -78,11 +79,13 @@ export default function Navbar({ openCommandPalette, setOpenCommandPalette }: Co
                                 <DropdownMenuContent align="end" className="w-72">
                                     <DropdownMenuLabel>
                                         <div className="flex items-center font-normal">
-                                            <div className="shrink-0">
-                                                <img
-                                                    className="mr-3 h-8 w-8 rounded-full"
-                                                    src={auth.user.avatar}
-                                                />
+                                            <div className="mr-3 shrink-0">
+                                                <Avatar>
+                                                    <AvatarImage src={auth.user.avatar} />
+                                                    <AvatarFallback>
+                                                        {auth.user.acronym}
+                                                    </AvatarFallback>
+                                                </Avatar>
                                             </div>
                                             <div>
                                                 <div>{auth.user.name}</div>
