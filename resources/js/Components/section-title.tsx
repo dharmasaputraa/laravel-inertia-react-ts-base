@@ -1,4 +1,3 @@
-import React from 'react';
 import { CardDescription, CardHeader, CardTitle } from './ui/card';
 
 export default function SectionTitle({
