@@ -11,6 +11,7 @@ import {
 import {
     Table,
     TableBody,
+    TableCaption,
     TableCell,
     TableHead,
     TableHeader,
@@ -49,7 +50,7 @@ export default function Index({ auth }: PageProps) {
                                         <TableRow key={i}>
                                             <TableCell className="w-0">{meta.from + i}</TableCell>
                                             <TableCell>
-                                                <div className="flex items-center font-normal">
+                                                <div className=" flex items-center font-normal">
                                                     <div className="mr-3 shrink-0">
                                                         <Avatar>
                                                             <AvatarImage src={user.avatar} />

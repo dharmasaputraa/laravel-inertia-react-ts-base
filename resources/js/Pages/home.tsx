@@ -5,7 +5,7 @@ export default function Home() {
     return (
         <>
             <Container>
-                <div className="py-12">Home</div>
+                <h1 className="py-12">Home</h1>
             </Container>
         </>
     );
